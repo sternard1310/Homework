@@ -1,2 +1,0 @@
-# Homework
-Java+SkillDesk
