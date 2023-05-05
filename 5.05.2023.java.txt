@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+import static java.lang.Math.PI;
+
+//05.05.2023
+public class Homework {
+    public static void main(String[] args) {
+        System.out.println("Введите четное количество символов");
+        Scanner scanner = new Scanner(System.in);
+        String Str1 = scanner.nextLine();
+        System.out.println("Ввeдите четное количество символов");
+        String Str2 = scanner.nextLine();
+
+        //Methods
+        returnNewWord(Str1, Str2);
+
+        //addition(1, 12);
+        //subtraction(1, 12);
+        //multiplication(1, 12);
+        //separation(50, 12);
+        //separation2(50, 12);
+
+        //conversion(5004.56,1.2);
+
+        //calorieCalculator(28,24);
+
+        //squareTriangle(24,24,24);
+        //squareRectangle(18.7, 19.2);
+        //squareCircle(28.14);
+
+        //getChars("фіафіаф13аЭ", 3, 1);
+    }
+    public static String returnNewWord(String Str1, String Str2) {
+        int length1 = Str1.length() / 2;//половинки строки
+        int length2 = Str2.length() / 2;
+        int length3 = Str2.length();
+
+        String line1 = Str1.substring(length1);
+        String line2 = Str2.substring(length2);
+
+        String line3 = line1.substring(0,length1);
+        String line4 = line2.substring(length2, length3);
+
+        String fullLine = line3 + line4;
+        System.out.println(fullLine);
+
+        return fullLine;
+    }
+
+    public static int addition(int a, int b) {
+        int c = a + b;
+        System.out.println("Результат при сложении :" + c);
+        return c;
+
+    }
+
+    public static int subtraction(int a, int b) {
+        int c = a - b;
+        System.out.println("Результат при вычитании :" + c);
+        return c;
+
+    }
+
+    public static int multiplication(int a, int b) {
+        int c = a * b;
+        System.out.println("Результат при умножении :" + c);
+        return c;
+
+    }
+
+    public static int separation(int a, int b) {
+        int c = a / b;
+        System.out.println("Результат при делении :" + c);
+        return c;
+    }
+
+    public static int separation2(int a, int b) {
+        int c = a % b;
+        System.out.println("Результат при делении :" + c);
+        return c;
+    }
+
+    public static double conversion (double euro, double kurs) {
+        double dollar = euro * kurs;
+        System.out.println("При курсе " + kurs + " USD за один EUR, при обмене " + euro + " EUR, вы получте " + dollar + " USD");
+        return dollar;
+    }
+    public static int calorieCalculator  (int a, int b) {
+        int dif = (a - b)*40;
+        System.out.println("Разница между пиццами " + a + " и " + b +" диаметра в Ка : " + dif);
+        return dif;
+    }
+    public static double squareTriangle  (double a, double b, double c) {
+        double p = (a + b + c)/2;
+        double S;
+        S = (p * (p - a) * (p - b) * (p - c));
+        // Почему я не могу написть S = (p * (p - a) * (p - b) * (p - c)) ^ 0.5;?
+        System.out.println("Площадь треугольника через формулу Герона : " + Math.pow(S, 0.5));
+        return S;
+    }
+    public static double squareRectangle  (double a, double b) {
+        double S = a * b;
+        System.out.println("Площадь примоугольника со сторонами " + a + " и " + b + " : " + S);
+        return S;
+    }
+    public static double squareCircle  (double a) {
+        double S = Math.PI * Math.pow(a ,2);
+        System.out.println("Площадь круга с радиуосм " + a + " : " + S );
+        return S;
+    }
+    public static char getChars (String a, int b, int c) {
+        char line1 = a.charAt(b);
+        char line2 = a.charAt(c);
+        System.out.println("Ваша строка : " + a + " из которой мы вибираем " + b + " и " + c + " позиции : " + line1 + " и " + line2);
+        return line2;
+    }
+}
