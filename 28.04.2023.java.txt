@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class HomeworkBot {
+    public static void main(String[] args) {
+
+        System.out.println("сколько коробок вы хотите отправить?");
+
+        Scanner scanner = new Scanner(System.in);
+        int howManyBoxes = scanner.nextInt();
+
+        System.out.println("Вес одной коробки в килограммах ?");
+
+        double wieghtOfBox = scanner.nextDouble();
+
+        double wieghtOfBoxes = wieghtOfBox * howManyBoxes;
+
+        System.out.println("Имя получателя ?");
+        String nameOfRecipient = scanner.next();
+        //Вычитал на форуме что так можно сделать, почему так происходит?
+
+
+        System.out.println("Адрес получателя ?");
+        String addressOfRecipient = scanner.next();//Почему тут нельзя использоватьт next.Line
+
+        System.out.println("Получатель: \"" + nameOfRecipient.toUpperCase() + "\"");
+        System.out.println("Адрес получателя: \"" + addressOfRecipient.toUpperCase() + "\"");
+        System.out.println("Bес посылки: \"" + wieghtOfBoxes + "\"");
+
+        System.out.println("Все верно ? (введите true или false)");
+        boolean rightIsDelivery = scanner.nextBoolean();
+        System.out.println("Ваш ответ : " + rightIsDelivery);
+    }
+}
